@@ -1,4 +1,6 @@
 
+set nocompatible
+ 
 filetype off
 execute pathogen#infect()
 
@@ -9,20 +11,24 @@ set softtabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+set smarttab
 set foldmethod=indent
 set foldlevel=99
 
+set visualbell
+
+
 set hlsearch
 set incsearch
+nmap <silent> <Leader>/ :nohlsearch<CR>
 set showmatch
 
 set number
 
+set wildignore=*.swp,*.bak,*.pyc,*.class
+
 syntax on
 
-set nocompatible
- 
-syntax on
 set background=dark
 set gfn=Monaco:h12
 colorscheme jellybeans
@@ -39,6 +45,7 @@ if has("autocmd")
 
     augroup vimrc_autocmds
         autocmd!
+        autocmd filetype python set expandtab
         autocmd FileType python set omnifunc=pythoncomplete#Complete
         autocmd vimenter * if !argc() | NERDTree | endif
         " highlight characters past column 80
@@ -51,5 +58,13 @@ endif
 "Markdown to HTML  
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr></cr></leader>
 
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
+" Select all text in current buffer
+map <Leader>a ggVG
+
+" Toggle NERDTree on and off
+map <Leader>nt :NERDTreeToggle<CR>
 
