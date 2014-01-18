@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 execute pathogen#infect()
 
-set expandtab
+" set expandtab
 " set textwidth=79
 set tabstop=8
 set softtabstop=4
@@ -43,16 +43,26 @@ if has("autocmd")
     filetype plugin on
     filetype plugin indent on
 
-    augroup vimrc_autocmds
+    augroup filetype_autocmds
         autocmd!
-        autocmd filetype python set expandtab
+        autocmd Filetype python set expandtab
         autocmd FileType python set omnifunc=pythoncomplete#Complete
-        autocmd vimenter * if !argc() | NERDTree | endif
         " highlight characters past column 80
         autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
         autocmd FileType python match Excess /\%80v.*/
         autocmd FileType python set nowrap
     augroup END
+
+    augroup nerdtree_group
+        autocmd!
+        autocmd vimenter * if !argc() | NERDTree | endif
+    augroup END
+
+    augroup reload_vimrc
+        autocmd!
+        autocmd BufWritePost $MYVIMRC source $MYVIMRC
+    augroup END
+    
 endif
 
 "Markdown to HTML  

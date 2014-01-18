@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Install a vim plugin under pathogen's control as a git submodule
+# Jan 17, 2014
+# Stuart Ebling mailto:stuart.ebling@gmail.com
+
+# requires the git clone url and
+# the name of the folder (in the bundle directory) to install to
+usage()
+{
+    echo "usage: vim-install-plugin git-clone-url install-dir"
+    exit 1
+}
+
+error_out()
+{
+    echo ${1}
+    exit 2
+}
+
+if [ $# -ne 2 ]; then
+    usage
+fi
+
+cd ~/.vim || error_out "Failed to cd to ~/.vim"
+git submodule add ${1} ~/.vim/bundle/${2} && git add .
+rc=$?
+if [ $rc -eq 0 ]; then
+    echo "plugin installed at ~/.vim/bundle/${2}"
+    echo "don't forget to commit after testing"
+    git status
+fi
+
+
+
