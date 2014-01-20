@@ -7,8 +7,6 @@ execute pathogen#infect()
 " set expandtab
 " set textwidth=79
 set tabstop=8
-set softtabstop=4
-set shiftwidth=4
 set autoindent
 set smartindent
 set smarttab
@@ -46,6 +44,8 @@ if has("autocmd")
     augroup filetype_autocmds
         autocmd!
         autocmd Filetype python set expandtab
+	autocmd Filetype python set softtabstop=4
+	autocmd Filetype python set shiftwidth=4
         autocmd FileType python set omnifunc=pythoncomplete#Complete
         " highlight characters past column 80
         autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black

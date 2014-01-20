@@ -1,0 +1,22 @@
+
+snippet cla SDE-new style class definition
+	class ${1:classname}(${2:object}):
+	    """${3:docstring}"""
+
+	    def __init__(self, ${4:property}=None):
+		    self.__$4 = $4
+
+snippet lic SDE-basic list comprehension form
+	[${1:newitem} for ${2:item} in ${3:iterable}]
+snippet @prop SDE-class property
+	@property
+	def ${1:propname}(self):
+		return self.__$1
+snippet @set SDE-class property setter
+	@${1:property}
+	def $1(self, value=${3:None}):
+		self.__$1 = value
+snippet fo SDE-open a file in a with
+	with open(${1:filename}, '${2:perms}') as fp:
+		${3}	
+#
