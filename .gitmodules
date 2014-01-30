@@ -23,3 +23,6 @@
 	path = bundle/python-mode
 	url = https://github.com/klen/python-mode.git
 	branch = master
+[submodule "/Users/stuartebling/.vim/bundle/tagbar"]
+	path = /Users/stuartebling/.vim/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar

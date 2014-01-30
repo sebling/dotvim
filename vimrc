@@ -86,3 +86,6 @@ map <Leader>a ggVG
 " Toggle NERDTree on and off
 map <Leader>nt :NERDTreeToggle<CR>
 
+" Toggle Tagbar
+nmap <Leader>tb :TagbarToggle<CR>
+
