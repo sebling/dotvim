@@ -4,25 +4,32 @@ set nocompatible
 filetype off
 execute pathogen#infect()
 
-" set expandtab
 " set textwidth=79
-set tabstop=8
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set autoindent
 set smartindent
 set smarttab
 set foldmethod=indent
 set foldlevel=99
+set backspace=indent,eol,start
 
 set visualbell
+set history=100
 
-
+" highlight search matches
 set hlsearch
+" search ahead while typing
 set incsearch
+" unhighlight found items
 nmap <silent> <Leader>/ :nohlsearch<CR>
 set showmatch
 
 set number
 
+" ignore these file types
 set wildignore=*.swp,*.bak,*.pyc,*.class
 
 syntax on
@@ -30,11 +37,6 @@ syntax on
 set background=dark
 set gfn=Monaco:h12
 colorscheme jellybeans
-
-let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-
-" map T :TaskList<CR>
-" map P :TlistToggle<CR>
 
 if has("autocmd")
     filetype on
@@ -44,20 +46,26 @@ if has("autocmd")
     augroup filetype_autocmds
         autocmd!
         autocmd Filetype python set expandtab
-	autocmd Filetype python set softtabstop=4
-	autocmd Filetype python set shiftwidth=4
+	    autocmd Filetype python set softtabstop=4
+	    autocmd Filetype python set shiftwidth=4
         autocmd FileType python set omnifunc=pythoncomplete#Complete
         " highlight characters past column 80
         autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
         autocmd FileType python match Excess /\%80v.*/
+	    " don't let lines auto wrap
         autocmd FileType python set nowrap
+	    " translate my retrun into return
+	    autocmd FileType python abbr retrun return
     augroup END
 
+    " nerdtree autocmds
     augroup nerdtree_group
         autocmd!
+        " open nerdtree automatically if vim started with no file
         autocmd vimenter * if !argc() | NERDTree | endif
     augroup END
 
+    " auto reload .vimrc when it changes
     augroup reload_vimrc
         autocmd!
         autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -65,7 +73,7 @@ if has("autocmd")
     
 endif
 
-"Markdown to HTML  
+" Markdown to HTML  
 nmap <leader>md :%!/usr/local/bin/Markdown.pl --html4tags <cr></cr></leader>
 
 " Quickly edit/reload the vimrc file
