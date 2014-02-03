@@ -26,3 +26,7 @@
 [submodule "/Users/stuartebling/.vim/bundle/tagbar"]
 	path = /Users/stuartebling/.vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar
+[submodule "/Users/stuartebling/.vim/bundle/indent-guides"]
+	path = /Users/stuartebling/.vim/bundle/indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides.git
+	branch = master

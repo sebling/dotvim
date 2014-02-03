@@ -22,8 +22,10 @@ if [ $# -ne 2 ]; then
     usage
 fi
 
+branch="master"
+
 cd ~/.vim || error_out "Failed to cd to ~/.vim"
-git submodule add ${1} ~/.vim/bundle/${2} && git add .
+git submodule add -b ${branch} ${1} ~/.vim/bundle/${2} && git add .
 rc=$?
 if [ $rc -eq 0 ]; then
     echo "plugin installed at ~/.vim/bundle/${2}"
