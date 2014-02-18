@@ -89,3 +89,5 @@ map <Leader>nt :NERDTreeToggle<CR>
 " Toggle Tagbar
 nmap <Leader>tb :TagbarToggle<CR>
 
+let g:pymode_rope_lookup_project = 0
+
