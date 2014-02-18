@@ -25,10 +25,10 @@ fi
 branch="master"
 
 cd ~/.vim || error_out "Failed to cd to ~/.vim"
-git submodule add -b ${branch} ${1} ~/.vim/bundle/${2} && git add .
+git submodule add -b ${branch} ${1} bundle/${2} && git add .
 rc=$?
 if [ $rc -eq 0 ]; then
-    echo "plugin installed at ~/.vim/bundle/${2}"
+    echo "plugin installed at bundle/${2}"
     echo "don't forget to commit after testing"
     git status
 fi
