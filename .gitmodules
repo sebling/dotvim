@@ -30,3 +30,6 @@
 	path = bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides.git
 	branch = master
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
