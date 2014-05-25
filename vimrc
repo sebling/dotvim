@@ -35,7 +35,7 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 syntax on
 
 set background=dark
-set gfn=Monaco:h12
+" set gfn=Monaco:h12
 colorscheme jellybeans
 
 if has("autocmd")
