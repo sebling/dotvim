@@ -56,6 +56,9 @@ if has("autocmd")
         autocmd FileType python set nowrap
 	    " translate my retrun into return
 	    autocmd FileType python abbr retrun return
+        " turn on spell check for text like docs
+        autocmd FileType markdown setlocal spell
+        autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     augroup END
 
     " nerdtree autocmds
