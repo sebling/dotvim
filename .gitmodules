@@ -37,3 +37,7 @@
 	path = bundle/jinja2
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
 	branch = master
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = https://github.com/elzr/vim-json.git
+	branch = master
