@@ -92,5 +92,8 @@ map <Leader>nt :NERDTreeToggle<CR>
 " Toggle Tagbar
 map <Leader>tb :TagbarToggle<CR>
 
+" Tell rope to be less search intensive
 let g:pymode_rope_lookup_project = 0
 
+" Toggle gundo
+nnoremap <leader>gu :GundoToggle<CR>

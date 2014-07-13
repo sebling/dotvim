@@ -45,3 +45,15 @@
 	path = bundle/vim-jinja2
 	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
 	branch = master
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
+	branch = master
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git
+	branch = master
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+	branch = master
