@@ -8,7 +8,7 @@
 # the name of the folder (in the bundle directory) to install to
 usage()
 {
-    echo "usage: vim-install-plugin git-clone-url install-dir"
+    echo "usage: vim-install-plugin git-clone-url bundle-name"
     exit 1
 }
 

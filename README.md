@@ -37,5 +37,17 @@
 
         ~/.vim/vim-update-plugins
 
+# Notes
 
+    Current versions disable the Rope functionality in python-mode in favor
+    of jedi-vim for auto-completion. For this to work your vim must be 
+    compiled with +python the the jedi python package must be available.
+
+    You can install the jedi python package with
+
+        pip install jedi
+
+    The jedi python package must be available to vim, so take this into 
+    consideration when working on python code within a virtual python
+    environment.
 
