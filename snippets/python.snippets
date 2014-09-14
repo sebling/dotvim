@@ -19,4 +19,20 @@ snippet @set SDE-class property setter
 snippet fo SDE-open a file in a with
 	with open(${1:filename}, '${2:perms}') as fp:
 		${3}	
+snippet doc SDE-docopt docstring
+	"""
+	${1:command}
+
+	Usage:
+
+
+	Arguments:
+
+
+	Options:
+		-h, --help		Show this help text and exit
+		--version		Show the version number and exit
+
+	"""
+    
 #
