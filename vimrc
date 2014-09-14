@@ -37,6 +37,7 @@ syntax on
 set background=dark
 " set gfn=Monaco:h12
 colorscheme jellybeans
+" colorscheme solarized
 
 if has("autocmd")
     filetype on
@@ -92,6 +93,8 @@ map <Leader>nt :NERDTreeToggle<CR>
 " Toggle Tagbar
 map <Leader>tb :TagbarToggle<CR>
 
+" Tell rope to bite me
+let g:pymode_rope = 0
 " Tell rope to be less search intensive
 let g:pymode_rope_lookup_project = 0
 
