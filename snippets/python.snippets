@@ -1,38 +1,110 @@
 
+#
+# code snippets
+#
+snippet from SDE-import from
+	from ${1:module} import ${2:type}
+#
 snippet cla SDE-new style class definition
-	class ${1:classname}(${2:object}):
-	    """${3:docstring}"""
+	class ${1:Classname}(${2:object}):
+	    """${3:docstring for $1}"""
 
-	    def __init__(self, ${4:property}=None):
+	    def __init__(self, ${4:arg}):
+			${5:super($1, self).__init__()}
 		    self.__$4 = $4
-
-snippet lic SDE-basic list comprehension form
+			${6}
+#
+snippet im SDE-instance method of a class
+	def ${1:fname}(self, ${2:params}):
+		"""${3:docstring}"""
+		${4:code}
+#
+snippet cm SDE-class method of a class
+	@classmethod
+	def ${1:fname}(cls, ${2:params}):
+		"""${3:docstring}"""
+		${4:code}
+#
+snippet sm SDE-staticmethod
+	@staticmethod
+	def ${1:methname}(${2:arg}):
+		"""${3:docstring}"""
+		${4}
+#
+snippet fn SDE-method/function definition
+	def ${1:functionname}(${2:parameters}):
+		"""${3:docstring}"""
+		${4:code}
+#
+snippet ri SDE-return if condition
+	return ${1:value} if ${2:condition} else ${3:otherwise}
+#
+snippet lc SDE-basic list comprehension form
 	[${1:newitem} for ${2:item} in ${3:iterable}]
+#
 snippet @prop SDE-class property
 	@property
 	def ${1:propname}(self):
 		return self.__$1
+#
 snippet @set SDE-class property setter
 	@${1:property}
 	def $1(self, value=${3:None}):
 		self.__$1 = value
-snippet fo SDE-open a file in a with
+#
+snippet wo SDE-open a file in a with
 	with open(${1:filename}, '${2:perms}') as fp:
 		${3}	
-snippet doc SDE-docopt docstring
+#
+#
+# docstring snippets
+#
+snippet docopt SDE-docopt docstring
 	"""
 	${1:command}
 
 	Usage:
-
+		$1 [options] ARG1
 
 	Arguments:
-
+		ARG1		The first positional argument
 
 	Options:
 		-h, --help		Show this help text and exit
 		--version		Show the version number and exit
 
 	"""
-    
+
+	from docopt import docopt
 #
+snippet cliprog SDE-console script template
+	"""
+	${1:command}
+
+	Usage:
+		$1 [options] ARG1
+
+	Arguments:
+		ARG1		The first positional argument
+
+	Options:
+		-h, --help		Show this help text and exit
+		--version		Show the version number and exit
+
+	"""
+
+	import sys
+	import os
+
+	from docopt import docopt
+
+	def run(argv):
+		rc = 0
+		# compute stuff
+		return rc
+	
+	def main(argv=sys.argv):
+		sys.exit(run(argc))
+	
+	if __name__ == '__main__':
+		main()
