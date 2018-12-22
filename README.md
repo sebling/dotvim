@@ -1,3 +1,5 @@
+# Archived - this project is no longer used - see the vim-config project
+
 # Installation
 
     Save the current contents of your ~/.vim directory and your ~/.vimrc file
